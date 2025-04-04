@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard - To-Do App{% endblock %}
+
+{% block content %}
+    <h2>Your To-Do List</h2>
+    
+    <!-- Show message if no tasks exist -->
+    {% if todos %}
+        <ul>
+            {% for todo in todos %}
+                <li>
+                    <strong>{{ todo.title }}</strong>
+                    <p>{{ todo.description }}</p>
+                    <p>Status: {% if todo.completed %}Completed{% else %}Not Completed{% endif %}</p>
+                    <a href="{% url 'todo_edit' todo.pk %}">Edit</a> | 
+                    <a href="{% url 'todo_delete' todo.pk %}">Delete</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>You have no tasks yet. <a href="{% url 'todo_create' %}">Create a new task</a>.</p>
+    {% endif %}
+    
+{% endblock %}

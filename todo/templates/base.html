@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}To-Do App{% endblock %}</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!--HEADER/NAVBAR-->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'todo_list' %}">Dashboard</a></li>
+                <li><a href="{% url 'todo_create' %}">Create Task</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--Main Content-->
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!--Footer-->
+    <footer>
+        <p>&copy; 2025 To-Do App</p>
+    </footer>
+</body>
+</html>

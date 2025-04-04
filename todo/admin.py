@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import Todo  # Import the model you want to register
 
-# Register your models here.
+# Register the model with optional customization
+admin.site.register(Todo)

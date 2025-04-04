@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="logout-container">
+    <h2>You have been logged out successfully.</h2>
+    <p>Thank you for using our app!</p>
+    <a href="{% url 'login' %}">Click here to log back in</a>
+    <br>
+    <a href="{% url 'dashboard.html' %}">Or go to the homepage</a>
+  </div>
+{% endblock %}
